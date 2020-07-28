@@ -1,0 +1,248 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Terreno : MonoBehaviour
+{
+    public GameObject cubo;
+
+    //Posições para os próxims terrenos
+    public Transform um_objeto;
+    public Transform dois_objeto;
+    public Transform tres_objeto;
+    public Transform quatro_objeto;
+    public Transform cinco_objeto;
+    public Transform seis_objeto;
+    public Transform sete_objeto;
+    public Transform oito_objeto;
+
+    public bool um_status = false;
+    public bool dois_status = false;
+    public bool tres_status = false;
+    public bool quatro_status = false;
+    public bool cinco_status = false;
+    public bool seis_status = false;
+    public bool sete_status = false;
+    public bool oito_status = false;
+
+    int valor_aleatorio;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        geradorTerrenoAleatorio();
+        //geradorTerrenoAleatorioComCliques();
+        //geradorTerrenoAleatorioOptativo();
+    }
+
+    void geradorTerrenoAleatorio()
+    {
+        //GERADOR DE TERRENO ALEATÓRIO
+        if ((um_status == false) || (dois_status == false) || (tres_status == false) || (quatro_status == false) || (cinco_status == false) || (seis_status == false) || (sete_status == false) || (oito_status == false))
+        {
+            valor_aleatorio = Random.Range(1, 9);
+
+            if (valor_aleatorio == 1)
+            {
+                if (um_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, um_objeto.position, um_objeto.rotation);
+                    um_status = true;
+                    print(valor_aleatorio);
+                }
+            }
+            if (valor_aleatorio == 2)
+            {
+                if (dois_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, dois_objeto.position, dois_objeto.rotation);
+                    dois_status = true;
+                    print(valor_aleatorio);
+                }
+            }
+            if (valor_aleatorio == 3)
+            {
+                if (tres_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, tres_objeto.position, tres_objeto.rotation);
+                    tres_status = true;
+                    print(valor_aleatorio);
+                }
+            }
+            if (valor_aleatorio == 4)
+            {
+                if (quatro_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, quatro_objeto.position, quatro_objeto.rotation);
+                    quatro_status = true;
+                    print(valor_aleatorio);
+                }
+            }
+            if (valor_aleatorio == 5)
+            {
+                if (cinco_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, cinco_objeto.position, cinco_objeto.rotation);
+                    cinco_status = true;
+                    print(valor_aleatorio);
+                }
+            }
+            if (valor_aleatorio == 6)
+            {
+                if (seis_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, seis_objeto.position, seis_objeto.rotation);
+                    seis_status = true;
+                    print(valor_aleatorio);
+                }
+            }
+            if (valor_aleatorio == 7)
+            {
+                if (sete_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, sete_objeto.position, sete_objeto.rotation);
+                    sete_status = true;
+                    print(valor_aleatorio);
+                }
+            }
+            if (valor_aleatorio == 8)
+            {
+                if (oito_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, oito_objeto.position, oito_objeto.rotation);
+                    oito_status = true;
+                    print(valor_aleatorio);
+                }
+            }
+        }
+        else if ((um_status) && (dois_status) && (tres_status) && (quatro_status) && (cinco_status) && (seis_status) && (sete_status) && (oito_status))
+        {
+            print("TODOS OS TERRENOS FORAM CONSTRUÍDOS");
+            enabled = false;
+        }
+        //FIM GERADOR DE TERRENO ALEATÓRIO//
+    }
+
+    void geradorTerrenoAleatorioComCliques()
+    {
+        //GERADOR DE TERRENO ALEATÓRIO COM CLIQUES//
+        if (Input.GetButtonDown("Fire1"))
+        {
+            //GERADOR ALEATÓRIO
+            valor_aleatorio = (int)Random.Range(1, 8);
+
+            if (valor_aleatorio == 1)
+            {
+                if (um_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, um_objeto.position, um_objeto.rotation);
+                    um_status = true;
+                }
+            }
+            valor_aleatorio = Random.Range(1, 8);
+            if (valor_aleatorio == 2)
+            {
+                if (dois_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, dois_objeto.position, dois_objeto.rotation);
+                    dois_status = true;
+                }
+            }
+            if (valor_aleatorio == 3)
+            {
+                if (tres_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, tres_objeto.position, tres_objeto.rotation);
+                    tres_status = true;
+                }
+            }
+            if (valor_aleatorio == 4)
+            {
+                if (quatro_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, quatro_objeto.position, quatro_objeto.rotation);
+                    quatro_status = true;
+                }
+            }
+            if (valor_aleatorio == 5)
+            {
+                if (cinco_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, cinco_objeto.position, cinco_objeto.rotation);
+                    cinco_status = true;
+                }
+            }
+            if (valor_aleatorio == 6)
+            {
+                if (seis_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, seis_objeto.position, seis_objeto.rotation);
+                    seis_status = true;
+                }
+            }
+            if (valor_aleatorio == 7)
+            {
+                if (sete_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, sete_objeto.position, sete_objeto.rotation);
+                    sete_status = true;
+                }
+            }
+            if (valor_aleatorio == 8)
+            {
+                if (oito_status == false)
+                {
+                    GameObject copiaCubo = Instantiate(cubo, oito_objeto.position, oito_objeto.rotation);
+                    oito_status = true;
+                }
+            }
+            //FIM GERADOR ALEATÓRIO//
+        }
+        valor_aleatorio = (int)0.0;
+        //FIM GERADOR DE TERRENO ALEATÓRIO COM CLIQUES//
+    }
+
+    void geradorTerrenoAleatorioOptativo()
+    {
+        //GERADOR DE TERRENO ALEATÓRIO OPTATIVO
+        if (um_status == true)
+        {
+            GameObject copiaCubo = Instantiate(cubo, um_objeto.position, um_objeto.rotation);
+        }
+        if (dois_status == true)
+        {
+            GameObject copiaCubo = Instantiate(cubo, dois_objeto.position, dois_objeto.rotation);
+        }
+        if (tres_status == true)
+        {
+            GameObject copiaCubo = Instantiate(cubo, tres_objeto.position, tres_objeto.rotation);
+        }
+        if (quatro_status == true)
+        {
+            GameObject copiaCubo = Instantiate(cubo, quatro_objeto.position, quatro_objeto.rotation);
+        }
+        if (cinco_status == true)
+        {
+            GameObject copiaCubo = Instantiate(cubo, cinco_objeto.position, cinco_objeto.rotation);
+        }
+        if (seis_status == true)
+        {
+            GameObject copiaCubo = Instantiate(cubo, seis_objeto.position, seis_objeto.rotation);
+        }
+        if (sete_status == true)
+        {
+            GameObject copiaCubo = Instantiate(cubo, sete_objeto.position, sete_objeto.rotation);
+        }
+        if (oito_status == true)
+        {
+            GameObject copiaCubo = Instantiate(cubo, oito_objeto.position, oito_objeto.rotation);
+        }
+        //FIM GERADOR DE TERRENO ALEATÓRIO OPTATIVO//
+    }
+}
